@@ -1,0 +1,15 @@
+<svg height="50" width="228" viewBox="0 0 228 50" xmlns="http://www.w3.org/2000/svg">
+<svg height="100" width="228">
+  <defs>
+    <filter id="f1" x="0" y="0">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35" />
+    </filter>
+  </defs>
+  <rect width="228" height="90" stroke="green" stroke-width="3" fill="lightskyblue" filter="url(#f1)" />
+</svg>
+  <text>
+<tspan x="38" y="20" fill="red" style="font-size:24" >HIDE + WILD</tspan>
+<tspan x="20" y="40" style="font-size:14" fill="red">DESIGNS by HILARY MOLLOY</tspan>
+  </text>
+</svg>
+

@@ -1,11 +1,21 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { FaBars } from 'react-icons/fa'
-import logo from '../assets/logo.svg'
+import logo from '../assets/hide-wild.svg'
 import Links from '../constants/links'
 import SocialLinks from '../constants/socialLinks'
 const Navbar = ({ toggle }) => {
-  return <h2>navbar component</h2>
+  return (
+    <nav>
+      <div className="nav-center">
+        <div className="nav-header">
+          <Link to="/">
+            <img src={logo} alt="mdx logo" />
+          </Link>
+        </div>
+      </div>
+    </nav>
+  )
 }
 
 export default Navbar
