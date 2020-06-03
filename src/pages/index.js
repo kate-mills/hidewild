@@ -8,6 +8,7 @@ import SEO from '../components/SEO'
 const IndexPage = () => {
   return (
     <Layout>
+      <Hero showLeather />
     </Layout>
   )
 }
