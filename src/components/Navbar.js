@@ -6,13 +6,15 @@ import Links from '../constants/links'
 import SocialLinks from '../constants/socialLinks'
 const Navbar = ({ toggle }) => {
   return (
-    <nav>
+    <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <Link to="/">
-            <img src={logo} alt="mdx logo" />
-          </Link>
+          <Link to="/"><img src={logo} alt="mdx logo" /></Link>
+          <button className="toggle-btn"
+          onClick={toggle}> <FaBars/></button>
         </div>
+        <Links styleClass="nav-links"/> 
+        <SocialLinks styleClass="nav-icons"/>
       </div>
     </nav>
   )
