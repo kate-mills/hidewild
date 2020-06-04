@@ -6,7 +6,7 @@ const NewsLetter = () => {
       <section className="newsletter-page">
         <div className="page-center">
           <h2>Get all the latest straight to your inbox</h2>
-          <h4>I write to my friends every few weeks</h4>
+          <h4>Hilary writes her friends every couple months.</h4>
           <form 
             className="contact-form"
             name="newsletter"

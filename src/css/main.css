@@ -416,7 +416,9 @@ Posts Component
 .posts-title {
   font-weight: 700;
   text-transform: uppercase;
-  color: #e12d39;
+  /*color: #e12d39;*/
+  /*color: #53901e;*/
+  color:#74B652;
   font-size: 1.25rem;
   margin-bottom: 2.5rem;
 }

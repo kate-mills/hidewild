@@ -1,22 +1,19 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import { graphql } from 'gatsby'
-import Posts from '../components/Posts'
-import {Link} from "gatsby"
-// ...GatsbyImageSharpFluid
-const PostsPage = ({ data }) => {
+import {Link} from 'gatsby'
+const Jewelry = () => {
   return(
     <Layout>
-      <section className="error-page">
+      <section className="newsletter-page">
         <div className="page-center">
-          <span>In progress!</span>
-          <h3>Store is coming soon!</h3>
-          <Link to="/" className="btn">back</Link>
+          <h2>Store coming soon!</h2>
+          <h4>Sign up for our newsletter to get the latest on Hilary and her creations.</h4>
+        <Link to="/newsletter" className="btn btn-center">sign up</Link>
         </div>
       </section>
     </Layout>
   )
 }
 
-export default PostsPage
+export default Jewelry
