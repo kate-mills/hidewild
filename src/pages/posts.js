@@ -1,9 +1,9 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Posts from '../components/Posts'
-import {Link} from "gatsby"
+//
 // ...GatsbyImageSharpFluid
 const PostsPage = ({ data }) => {
   return(
