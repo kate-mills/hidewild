@@ -2,7 +2,7 @@ import React from 'react'
 import {
   FaFacebookSquare,
   FaInstagram,
-  FaTwitterSquare,
+  FaEtsy,
 } from 'react-icons/fa'
 
 const SocialLinks = ({ styleClass }) => {
@@ -14,13 +14,13 @@ const SocialLinks = ({ styleClass }) => {
         </a>
       </li>
       <li>
-        <a href="https://instagram.com">
+        <a href="https://instagram.com/hilarymolloydesigns">
           <FaInstagram className="social-icon instagram-icon"></FaInstagram>
         </a>
       </li>
       <li>
-        <a href="https://twitter.com">
-          <FaTwitterSquare className="social-icon twitter-icon"></FaTwitterSquare>
+        <a href="https://etsy.com/shop/HilaryMolloyDesigns">
+          <FaEtsy className="social-icon etsy-icon"></FaEtsy>
         </a>
       </li>
     </ul>

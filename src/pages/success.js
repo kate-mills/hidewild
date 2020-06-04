@@ -4,6 +4,12 @@ import { Link } from 'gatsby'
 const Success = () => {
   return(
     <Layout>
+      <section className="success-page">
+        <div className="page-center">
+          <h2>your submission was received!</h2>
+          <Link to="/" className="btn">back to  hide+wild</Link>
+        </div>
+      </section>
     </Layout>
   )
 }
