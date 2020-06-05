@@ -31,8 +31,7 @@ const PostTemplate = ({ data }) => {
           <MDXRenderer>{body}</MDXRenderer>
         </article>
 
-        {/* banner */}
-        <article></article>
+        <article><Banner /></article>
       </Wrapper>
     </Layout>
   )

@@ -1,4 +1,12 @@
 module.exports = {
+  siteMetadata: {
+    title: `Hide + Wild`,
+    description: `Designs by Hilary Molloy`,
+    titleTemplate: `%s | Hide + Wild`,
+    url: `https://hidewild.netlify.app`,
+    twitterUsername: `katie_napa`,
+    image: `mainImg.png`,
+  },
   plugins: [
     `gatsby-plugin-mdx`,
     `gatsby-plugin-react-helmet`,
