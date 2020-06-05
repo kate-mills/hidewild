@@ -6,33 +6,53 @@ import { graphql, useStaticQuery } from 'gatsby'
 //...GatsbyImageSharpFluid
 
 const query = graphql`
-  {
-    allInstaNode {
-      nodes {
+query {
+  allInstaNode {
+    edges {
+      node {
+        id
+        likes
+        comments
+        mediaType
+        preview
+        original
+        timestamp
+        caption
         localFile {
           childImageSharp {
-            fluid(maxWidth: 100, maxHeight: 100) {
+            fluid(maxWidth: 150, maxHeight: 150) {
               ...GatsbyImageSharpFluid
             }
           }
         }
+        thumbnails {
+          src
+          config_width
+          config_height
+        }
+        dimensions {
+          height
+          width
+        }
       }
     }
   }
+}
 `
 
 const Instagram = () => {
   const data = useStaticQuery(query)
   const {
-    allInstaNode: { nodes },
+    allInstaNode: { edges },
   } = data
   return (
     <Wrapper>
       <Title title="instagram" />
       <div className="images">
-        {nodes.map((item, index) => {
+        {edges.map(({node}) => {
+          console.log('node', node);
           return (
-            <Image key={index} fluid={item.localFile.childImageSharp.fluid} />
+            <Image key={node.id} fluid={node.localFile.childImageSharp.fluid} />
           )
         })}
       </div>
