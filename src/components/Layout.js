@@ -4,8 +4,10 @@ import Sidebar from './Sidebar'
 import Footer from './Footer'
 
 const Layout = ({ children }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const toggle = () => { return setIsOpen(!isOpen); }
+  const [isOpen, setIsOpen] = React.useState(false)
+  const toggle = () => {
+    return setIsOpen(!isOpen)
+  }
   return (
     <>
       <Navbar toggle={toggle}></Navbar>

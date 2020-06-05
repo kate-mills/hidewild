@@ -7,14 +7,18 @@ import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
-const PostTemplate = ({data}) => {
-  const {mdx:{frontmatter:{title, category, image, date}, body}} = data
+const PostTemplate = ({ data }) => {
+  const {
+    mdx: {
+      frontmatter: { title, category, image, date },
+      body,
+    },
+  } = data
 
   return (
     <Layout>
       <Hero />
       <Wrapper>
-
         {/* post info */}
         <article>
           <Image fluid={image.childImageSharp.fluid} />
@@ -28,14 +32,14 @@ const PostTemplate = ({data}) => {
         </article>
 
         {/* banner */}
-      <article></article>
+        <article></article>
       </Wrapper>
     </Layout>
   )
 }
 export const query = graphql`
-  query QuerySinglePost($slug:String){
-    mdx(frontmatter: {slug: {eq: $slug}}) {
+  query QuerySinglePost($slug: String) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
         category

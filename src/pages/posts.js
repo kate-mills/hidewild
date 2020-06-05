@@ -5,20 +5,20 @@ import { graphql, Link } from 'gatsby'
 import Posts from '../components/Posts'
 //
 const PostsPage = ({ data }) => {
-  const {allMdx: {posts}} = data
-  return(
+  const {
+    allMdx: { posts },
+  } = data
+  return (
     <Layout>
-      <Hero/>
       <Posts posts={posts} title="all creations & obsessions" />
     </Layout>
   )
 }
 
-
 export const query = graphql`
   {
-    allMdx(sort: {fields: frontmatter___date, order: DESC}) {
-      posts:nodes {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
+      posts: nodes {
         excerpt
         frontmatter {
           category
@@ -41,4 +41,3 @@ export const query = graphql`
 `
 
 export default PostsPage
-

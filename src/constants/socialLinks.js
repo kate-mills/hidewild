@@ -1,9 +1,5 @@
 import React from 'react'
-import {
-  FaFacebookSquare,
-  FaInstagram,
-  FaEtsy,
-} from 'react-icons/fa'
+import { FaFacebookSquare, FaInstagram, FaEtsy } from 'react-icons/fa'
 
 const SocialLinks = ({ styleClass }) => {
   return (

@@ -4,7 +4,7 @@ import Image from 'gatsby-image'
 
 export const query = graphql`
   {
-    person: file(relativePath: {eq: "leather.jpg"}) {
+    person: file(relativePath: { eq: "leather.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -14,12 +14,12 @@ export const query = graphql`
   }
 `
 
-const Hero = ({showLeather}) => {
-  const {person} = useStaticQuery(query)
-  return(
+const Hero = ({ showLeather }) => {
+  const { person } = useStaticQuery(query)
+  return (
     <header className="hero">
-      { showLeather && (
-        <Image fluid={person.childImageSharp.fluid} className="hero-person"/>
+      {showLeather && (
+        <Image fluid={person.childImageSharp.fluid} className="hero-person" />
       )}
     </header>
   )

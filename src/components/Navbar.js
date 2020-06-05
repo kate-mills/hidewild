@@ -9,12 +9,16 @@ const Navbar = ({ toggle }) => {
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <Link to="/"><img src={logo} alt="mdx logo" /></Link>
-          <button className="toggle-btn"
-          onClick={toggle}> <FaBars/></button>
+          <Link to="/">
+            <img src={logo} alt="mdx logo" />
+          </Link>
+          <button className="toggle-btn" onClick={toggle}>
+            {' '}
+            <FaBars />
+          </button>
         </div>
-        <Links styleClass="nav-links"/> 
-        <SocialLinks styleClass="nav-icons"/>
+        <Links styleClass="nav-links" />
+        <SocialLinks styleClass="nav-icons" />
       </div>
     </nav>
   )
