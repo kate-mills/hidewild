@@ -11,7 +11,7 @@ const PostsPage = ({ data }) => {
   } = data
   return (
     <Layout>
-      <SEO title="Posts"/>
+      <SEO title="Posts" />
       <Hero />
       <Posts posts={posts} title="all creations & obsessions" />
     </Layout>

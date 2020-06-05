@@ -1,9 +1,9 @@
-import React from "react"
-import SocialLinks from "../../constants/socialLinks"
-import Image from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
-import Title from "./Title"
-import styled from "styled-components"
+import React from 'react'
+import SocialLinks from '../../constants/socialLinks'
+import Image from 'gatsby-image'
+import { graphql, useStaticQuery } from 'gatsby'
+import Title from './Title'
+import styled from 'styled-components'
 const query = graphql`
   {
     file(relativePath: { eq: "hilary.png" }) {

@@ -5,7 +5,7 @@ import SEO from '../components/SEO'
 const NewsLetter = () => {
   return (
     <Layout>
-      <SEO title="Newsletter"/>
+      <SEO title="Newsletter" />
       <section className="newsletter-page">
         <div className="page-center">
           <h2>Get all the latest straight to your inbox</h2>
