@@ -1,19 +1,18 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import Layout from '../components/Layout'
-import Posts from '../components/Posts'
-import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
-
+import React from "react"
+import Hero from "../components/Hero"
+import Layout from "../components/Layout"
+import Posts from "../components/Posts"
+import { graphql } from "gatsby"
+import SEO from "../components/SEO"
 const IndexPage = ({ data }) => {
   const {
-    allMdx: { posts },
+    allMdx: { nodes: posts },
   } = data
   return (
     <Layout>
       <SEO title="Home" />
-      <Hero showLeather />
-      <Posts posts={posts} title="Creations & Obsessions" />
+      <Hero showPerson />
+      <Posts posts={posts} title="recently published" />
     </Layout>
   )
 }
@@ -21,15 +20,13 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   {
     allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 3) {
-      posts: nodes {
-        excerpt
+      nodes {
         frontmatter {
+          readTime
+          title
           category
           date(formatString: "MMMM Do, YYYY")
           slug
-          title
-          readTime
-          author
           image {
             childImageSharp {
               fluid {
@@ -38,6 +35,7 @@ export const query = graphql`
             }
           }
         }
+        excerpt
         id
       }
     }

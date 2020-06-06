@@ -1,17 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `Hide + Wild`,
-    description: `Designs by Hilary Molloy`,
-    titleTemplate: `%s | Hide + Wild`,
-    url: `https://hidewild.netlify.app`,
-    twitterUsername: `katie_napa`,
+    title: `Gatsby MDX Blog`,
+    description: `Awesome Blog built with Gatsby and MDX`,
+    titleTemplate: `%s | MDX Blog`,
+    url: `https://gatsby-mdx-blog-course-project.netlify.app/`,
     image: `mainImg.png`,
+    twitterUsername: `@john_smilga`,
   },
   plugins: [
-    `gatsby-plugin-mdx`,
+    // `gatsby-plugin-mdx`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    `gatsby-remark-images`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,16 +28,10 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-mdx`,
-    //   options: {
-    //     gatsbyRemarkPlugins: [{ resolve: 'gatsby-remark-images' }],
-    //   },
-    // },
     {
-      resolve: `gatsby-source-instagram`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        username: `hilarymolloydesigns`,
+        gatsbyRemarkPlugins: [{ resolve: "gatsby-remark-images" }],
       },
     },
     {
@@ -52,6 +46,12 @@ module.exports = {
             family: `Open Sans`,
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `hilarymolloydesigns`,
       },
     },
   ],

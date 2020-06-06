@@ -1,27 +1,27 @@
-import React from 'react'
-import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby'
-import Image from 'gatsby-image'
-import Title from './Title'
+import React from "react"
+import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
+import Image from "gatsby-image"
+import Title from "./Title"
 
 const query = graphql`
   {
-    allMdx(limit: 2, sort: { fields: frontmatter___date, order: DESC }) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 5) {
       nodes {
-        id
         frontmatter {
-          date(formatString: "MMM Do, YYYY")
           slug
           title
+          date(formatString: "MMMM Do, YYYY")
           image {
             childImageSharp {
-              fluid(maxHeight: 100, maxWidth: 100) {
+              fluid {
                 ...GatsbyImageSharpFluid
               }
             }
           }
         }
+        id
       }
     }
   }
@@ -36,12 +36,19 @@ const Recent = () => {
     <Wrapper>
       <Title title="recent" />
       {posts.map(post => {
-        const { title, slug, date, image } = post.frontmatter
+        const {
+          title,
+          slug,
+          date,
+          image: {
+            childImageSharp: { fluid },
+          },
+        } = post.frontmatter
         return (
-          <Link to={`/posts/${slug}`} className="post" key={post.id}>
-            <Image fluid={image.childImageSharp.fluid} className="img" />
+          <Link to={`/posts/${slug}`} key={post.id} className="post">
+            <Image fluid={fluid} className="img" />
             <div>
-              <h5> {title}</h5>
+              <h5>{title}</h5>
               <p>{date}</p>
             </div>
           </Link>

@@ -1,58 +1,42 @@
-import React from 'react'
-import Title from './Title'
-import Image from 'gatsby-image'
-import styled from 'styled-components'
-import { graphql, useStaticQuery } from 'gatsby'
-//...GatsbyImageSharpFluid
+import React from "react"
+import Title from "./Title"
+import Image from "gatsby-image"
+import styled from "styled-components"
+import { graphql, useStaticQuery } from "gatsby"
 
 const query = graphql`
-  query {
-    allInstaNode {
-      edges {
-        node {
-          id
-          likes
-          comments
-          mediaType
-          preview
-          original
-          timestamp
-          caption
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 150, maxHeight: 150) {
-                ...GatsbyImageSharpFluid
-              }
+  {
+    allInstaNode(limit: 6) {
+      nodes {
+        localFile {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
             }
-          }
-          thumbnails {
-            src
-            config_width
-            config_height
-          }
-          dimensions {
-            height
-            width
           }
         }
       }
     }
   }
 `
-
 const Instagram = () => {
   const data = useStaticQuery(query)
+
   const {
-    allInstaNode: { edges },
+    allInstaNode: { nodes },
   } = data
+
   return (
     <Wrapper>
-      <Title title="instagram" />
+      <Title title="instagram"></Title>
       <div className="images">
-        {edges.map(({ node }) => {
-          return (
-            <Image key={node.id} fluid={node.localFile.childImageSharp.fluid} />
-          )
+        {nodes.map((item, index) => {
+          const {
+            localFile: {
+              childImageSharp: { fluid },
+            },
+          } = item
+          return <Image fluid={fluid} key={index} />
         })}
       </div>
     </Wrapper>

@@ -1,11 +1,12 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import Hero from '../components/Hero'
-import styled from 'styled-components'
-import Image from 'gatsby-image'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-
+import React from "react"
+import Layout from "../components/Layout"
+import Hero from "../components/Hero"
+import styled from "styled-components"
+import Image from "gatsby-image"
+import Banner from "../components/Banner"
+import { graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import SEO from "../components/SEO"
 const PostTemplate = ({ data }) => {
   const {
     mdx: {
@@ -16,9 +17,9 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title={title} image={image.childImageSharp.fluid.src} />
       <Hero />
       <Wrapper>
-        {/* post info */}
         <article>
           <Image fluid={image.childImageSharp.fluid} />
           <div className="post-info">
@@ -29,22 +30,25 @@ const PostTemplate = ({ data }) => {
           </div>
           <MDXRenderer>{body}</MDXRenderer>
         </article>
+        <article>
+          <Banner />
+        </article>
       </Wrapper>
     </Layout>
   )
 }
+
 export const query = graphql`
-  query QuerySinglePost($slug: String) {
+  query GetSinglePost($slug: String) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
         category
-        date(formatString: "MMM Do, YYYY")
-        readTime
-        slug
+        date(formatString: "MMMM Do, YYYY")
         image {
           childImageSharp {
             fluid {
+              src
               ...GatsbyImageSharpFluid
             }
           }

@@ -1,5 +1,6 @@
-import React from 'react'
-import Post from './Post'
+import React from "react"
+import Post from "./Post"
+import Banner from "../Banner"
 const Posts = ({ posts, title }) => {
   return (
     <section className="posts">
@@ -7,11 +8,11 @@ const Posts = ({ posts, title }) => {
       <div className="posts-center">
         <article>
           {posts.map(post => {
-            return <Post key={post.id} {...post} />
+            return <Post key={post.id} {...post}></Post>
           })}
         </article>
         <article>
-          Banner
+          <Banner />
         </article>
       </div>
     </section>

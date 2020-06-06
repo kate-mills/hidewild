@@ -1,4 +1,11 @@
-import './src/css/main.css'
-import { wrapMDX } from './root-mdx'
+import "./src/css/main.css"
 
-export const wrapRootElement = wrapMDX
+import { wrapRootElement as wrap } from "./root-wrapper"
+export const wrapRootElement = wrap
+/**
+ * Implement Gatsby's Browser APIs in this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/browser-apis/
+ */
+
+// You can delete this file if you're not using it

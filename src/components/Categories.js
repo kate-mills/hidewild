@@ -1,7 +1,6 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby'
-
+import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 const query = graphql`
   {
     allMdx {
