@@ -35,13 +35,6 @@ module.exports = {
     //   },
     // },
     {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `hilarymolloydesigns`,
-        type: `user-profile`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
