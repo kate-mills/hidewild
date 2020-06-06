@@ -6,7 +6,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 //...GatsbyImageSharpFluid
 
 const query = graphql`
-  query {
+  {
     allInstaNode {
       edges {
         node {
