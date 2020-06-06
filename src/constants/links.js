@@ -5,7 +5,7 @@ const Links = ({ styleClass, children }) => {
     <ul className={styleClass}>
       <li>
         <Link to="/" className="page-link">
-          Hide + Wild
+          Home
         </Link>
       </li>
       <li>
