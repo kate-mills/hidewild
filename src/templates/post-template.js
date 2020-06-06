@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import styled from 'styled-components'
 import Image from 'gatsby-image'
+import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
@@ -29,6 +30,7 @@ const PostTemplate = ({ data }) => {
           </div>
           <MDXRenderer>{body}</MDXRenderer>
         </article>
+        <article><Banner/></article>
       </Wrapper>
     </Layout>
   )
